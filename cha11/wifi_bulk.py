@@ -10,7 +10,7 @@ for i in range (1, 15):
   iStart = (i-1)*1000 + 1
   iEnd = i*1000
 
-  url = 'http://openapi.seoul.go.kr:8088/70474c697263616e333976706b574d/xml/PublicWiFiPlaceInfo/'+str(iStart)+'/'+str(iEnd)+'/'
+  url = 'http://openapi.seoul.go.kr:8088/(인증키)/xml/PublicWiFiPlaceInfo/'+str(iStart)+'/'+str(iEnd)+'/'
   response = urllib.request.urlopen(url)
   xml_str = response.read().decode('utf-8')
   
