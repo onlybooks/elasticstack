@@ -58,6 +58,5 @@ for i in range (1, 15):
       docs.append(doc)
   print("END", iStart, "~", iEnd)
 
-print(len(docs))
-#res = helpers.bulk(es, docs)
+res = helpers.bulk(es, docs)
 print("END")
