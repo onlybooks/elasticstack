@@ -1,0 +1,18 @@
+PUT _index_template/test_template
+{
+  "index_patterns": ["test_*"],
+  "priority": 1,
+  "template": {
+    "settings": {
+      "number_of_shards": 3,
+      "number_of_replicas": 1
+    },
+    "mappings": {
+      "properties": {
+        "name": {"type": "text"},
+        "age": {"type": "short"},
+        "gender": {"type": "keyword"}
+      }
+    }
+  }
+}
