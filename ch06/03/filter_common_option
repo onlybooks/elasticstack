@@ -1,0 +1,19 @@
+input {
+  file {
+    path => "C:/logstash-7.10.1/config/filter-example.log"
+    start_position => "beginning"
+    sincedb_path => "nul"
+  }
+}
+
+filter {
+  mutate {
+    split => { "message" => " " }
+    add_field => { "id" => "%{[message][2]}" }
+    remove_field => "message"
+  }
+}
+
+output {
+  stdout { }
+}
