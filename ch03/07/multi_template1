@@ -1,0 +1,13 @@
+PUT _index_template/multi_template1
+{
+  "index_patterns": "multi_*",
+  "priority": 1,
+  "template": {
+    "mappings": {
+      "properties": {
+        "age": {"type": "integer"},
+        "name": {"type": "text"}
+      }
+    }
+  }
+}
