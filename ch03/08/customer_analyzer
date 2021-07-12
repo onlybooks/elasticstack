@@ -1,0 +1,21 @@
+PUT customer_analyzer
+{
+  "settings": {
+    "analysis": {
+      "filter": {
+        "my_stopwords": {
+          "type": "stop",
+          "stopwords": ["lions"]
+        }
+      },
+      "analyzer": {
+        "my_analyzer": {
+          "type": "custom",
+          "char_filter": [],
+          "tokenizer": "standard",
+          "filter": ["lowercase","my_stopwords"]
+        }
+      }
+    }
+  }
+}
