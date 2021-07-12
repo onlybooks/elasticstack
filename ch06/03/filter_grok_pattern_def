@@ -1,0 +1,18 @@
+input {
+  file {
+    path => "C:/logstash-7.10.1/config/filter-example.log"
+    start_position => "beginning"
+    sincedb_path => "nul"
+  }
+}
+
+filter {
+  grok {
+    pattern_definitions => { "MY_TIMESTAMP" => "%{YEAR}[/-]%{MONTHNUM}[/-]%{MONTHDAY}[T ]%{HOUR}:?%{MINUTE}(?::?%{SECOND})?%{ISO8601_TIMEZONE}?" }
+    match => { "message" => "%{MY_TIMESTAMP:timestamp} * \[%{DATA:id}\] %{IP:ip} %{NUMBER:port:int} \[%{LOGLEVEL:level}\] \- %{DATA:msg}\."}
+  }
+}
+
+output {
+  stdout { }
+}
