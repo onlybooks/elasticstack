@@ -1,0 +1,24 @@
+GET kibana_sample_data_ecommerce/_search
+{
+  "size": 0,
+  "aggs": {
+    "term_aggs": {
+      "terms": {
+        "field": "day_of_week",
+        "size": 2
+      },
+      "aggs": {
+        "sum_aggs": {
+          "sum": {
+            "field": "products.base_price"
+          }
+        }
+      }
+    },
+    "sum_total_price": {
+      "sum_bucket": {
+        "buckets_path": "term_aggs>sum_aggs"
+      }
+    }
+  }
+}
