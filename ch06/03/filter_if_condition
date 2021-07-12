@@ -1,0 +1,26 @@
+
+input {
+  file {
+    path => "C:/logstash-7.10.1/config/filter-example.log"
+    start_position => "beginning"
+    sincedb_path => "nul"
+  }
+}
+
+filter {
+  dissect {
+    mapping => {"message" => "[%{timestamp}]%{?->}[%{id}] %{ip} %{port} [%{level}] - %{msg}."}
+  }
+  if [level] == "INFO" {
+    drop { }
+  }
+  else if [level] == "warn" {
+    mutate {
+      remove_field => [ "ip", "port", "timestamp", "level" ]
+    }
+  }
+}
+
+output {
+  stdout { }
+}
