@@ -1,0 +1,12 @@
+PUT _index_template/multi_template2
+{
+  "index_patterns": "multi_data_*",
+  "priority": 2,
+  "template": {
+    "mappings": {
+      "properties": {
+        "name": {"type": "keyword"}
+      }
+    }
+  }
+}
