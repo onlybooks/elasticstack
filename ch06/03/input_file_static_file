@@ -1,0 +1,11 @@
+input {
+  file {
+    path => "C:/logstash-7.10.1/config/filter-example.log"
+    start_position => "beginning"
+    sincedb_path => "nul"
+  }
+}
+
+output {
+  stdout { }
+}
