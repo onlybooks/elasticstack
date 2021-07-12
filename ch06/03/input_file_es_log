@@ -1,0 +1,10 @@
+input {
+  file {
+    path => "C:/elasticsearch-7.10.1/logs/elasticsearch.log"
+    start_position => "beginning"
+  }
+}
+
+output {
+  stdout { }
+}
