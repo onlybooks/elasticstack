@@ -1,0 +1,23 @@
+PUT tmdb_5000_movie2
+{
+  "mappings": {
+    "properties": {
+      "budget": { "type": "double" },
+      "popularity" : { "type": "double" },
+      "vote_average" : { "type": "double" },
+      "vote_count" : { "type": "double" },
+      "id" : { "type": "long" },
+      "revenue" : { "type": "long" },
+      "runtime" : { "type": "long" },
+      "genres" : { "type": "keyword" },
+      "original_language" : { "type": "keyword" },
+      "status" : { "type": "keyword" },
+      "homepage" : { "type": "text" },
+      "original_title" : { "type": "text" },
+      "overview" : { "type": "text" },
+      "tagline" : { "type": "text" },
+      "title" : { "type": "text" },
+      "release_date" : { "type": "date", "format" : "iso8601" }
+    }
+  }
+}
