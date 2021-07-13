@@ -1,0 +1,19 @@
+PUT seoul_wifi
+{
+  "settings": {
+    "analysis": {
+      "analyzer": {
+        "korean": {
+          "tokenizer": "nori_tokenizer"
+        }
+      }
+    }
+  },
+  "mappings": {
+    "properties": {
+      "gu_nm": {"type": "keyword"},
+      "place_nm": {"type": "text", "analyzer": "korean"},
+      "instl_xy": {"type": "geo_point"}
+    }
+  }
+}
