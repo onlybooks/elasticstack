@@ -1,0 +1,40 @@
+input {
+  file {
+    path => "C:/example/tmdb_5000_movies.csv"
+    start_position => "beginning"
+    sincedb_path => "nul"
+  }
+}
+
+filter {
+  csv {
+    separator => ","
+    columns => ["budget","genres","homepage","id","keywords","original_language",
+    "original_title","overview","popularity","production_companies","production_countries",
+    "_release_date","revenue","runtime","spoken_languages","status","tagline",
+    "title","vote_average","vote_count"]
+    remove_field => ["message", "production_companies", "production_countries",
+    "keywords", "spoken_languages", "@timestamp", "path", "@version", "host"]
+    skip_header => true
+  }
+  date {
+    match => ["_release_date", "YYYY-MM-dd"]
+    target => "release_date"
+    timezone => "UTC"
+    remove_field => "_release_date"
+  }
+  json {
+    source => "genres"
+    target => "genres"
+  }
+  ruby {
+    code => "
+    genres = event.get('genres').map{ |genre| genre['name'] }
+    event.set('genres', genres)
+    "
+  }
+}
+
+output {
+  stdout {}
+}
