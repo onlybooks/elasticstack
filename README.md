@@ -1,8 +1,8 @@
 # 엘라스틱 스택 개발부터 운영까지
-★데이터 수집, 변환, 분석, 시각화를 위한 엘라스틱서치, 로그스태시, 비츠, 키바나의 모든 것★<br>
-김준영 정상운 지음 | 박재호 감수<br><br>
+★ 데이터 수집, 변환, 분석, 시각화를 위한 엘라스틱서치, 로그스태시, 비츠, 키바나의 모든 것 ★<br>
+▶ 김준영 정상운 지음 | 박재호 감수<br>
 
-★ 책만 도서  정보페이지:https://www.onlybook.co.kr/entry/elasticstack <br><br>
+★ 책만 도서  정보페이지  https://www.onlybook.co.kr/entry/elasticstack <br>
   
 ▶ 교보문고 https://bit.ly/37hUwd6<br>
 ▶ 예스24 https://bit.ly/2Vidb67<br>
