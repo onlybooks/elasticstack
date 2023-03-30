@@ -1,0 +1,12 @@
+GET kibana_sample_data_ecommerce/_search
+{
+  "size": 0,
+  "aggs": {
+    "cardi_aggs": {
+      "cardinality": {
+        "field":"day_of_week",
+        "precision_threshold": 100
+      }
+    }
+  }
+}

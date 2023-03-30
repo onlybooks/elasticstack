@@ -1,0 +1,15 @@
+GET kibana_sample_data_ecommerce/_search
+{
+  "size": 0,
+  "aggs": {
+    "range_aggs": {
+      "range": {
+        "field": "products.base_price",
+        "ranges": [
+          { "from": 50, "to": 100 },
+          { "from": 100, "to": 200 }
+        ]
+      }
+    }
+  }
+}
